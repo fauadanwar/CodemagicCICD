@@ -8,7 +8,7 @@ workflows:
         BUNDLE_ID: "com.fz.codemagiccicd"
         XCODE_PROJECT: "CodemagicCICD/CodemagicCICD.xcodeproj"
         XCODE_SCHEME: "CodemagicCICD"
-      xcode: latest
+      xcode: 15.0
     scripts:
       - name: iOS test
         script: |
