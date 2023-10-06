@@ -14,10 +14,7 @@ workflows:
         script: |
           xcodebuild build \
           -project "$XCODE_PROJECT" \
-          -scheme "$XCODE_SCHEME" \
-          -CODE_SIGN_IDENTITY="" \
-          -CODE_SIGNING_REQUIRED=NO \
-          -CODE_SIGNING_ALLOWED=NO
+          -scheme "$XCODE_SCHEME"
       - name: iOS test
         script: |
           xcode-project run-tests \
