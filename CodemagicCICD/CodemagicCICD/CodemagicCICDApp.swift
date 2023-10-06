@@ -11,7 +11,7 @@ import SwiftUI
 struct CodemagicCICDApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(displayName: "Hello, world!")
         }
     }
 }
