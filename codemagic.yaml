@@ -8,11 +8,17 @@ workflows:
         BUNDLE_ID: "com.fz.codemagiccicd"
         XCODE_PROJECT: "CodemagicCICD/CodemagicCICD.xcodeproj"
         XCODE_SCHEME: "CodemagicCICD"
-      xcode: 14.2
+      xcode: latest
     scripts:
       - name: Build application
         script: |
-          xcodebuild build -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcodebuild build \
+          --clean \
+          --project "$XCODE_PROJECT" \
+          --scheme "$XCODE_SCHEME" \
+          -CODE_SIGN_IDENTITY="" \
+          -CODE_SIGNING_REQUIRED=NO \
+          -CODE_SIGNING_ALLOWED=NO
       - name: iOS test
         script: |
           xcode-project run-tests \
