@@ -1,0 +1,31 @@
+workflows:
+  CodemagicCICDiOS-workflow:
+    name: Codemagic CI CD
+    max_build_duration: 120
+    instance_type: mac_mini_m1
+    integrations:
+      app_store_connect: codemagic
+    environment:
+      vars:
+        BUNDLE_ID: "com.fz.codemagiccicd"
+        XCODE_WORKSPACE: "CodemagicCICD.xcodeproj"
+        XCODE_SCHEME: "CodemagicCICD"
+      xcode: latest
+    scripts:
+      - name: iOS test
+        script: |
+          xcode-project run-tests \
+            --workspace CodemagicCICD.xcodeproj \
+            --scheme CodemagicCICD \
+            --device "iPhone 14"
+     test_report: build/ios/test/*.xml
+     - name: Build ipa for distribution
+       script: |
+          xcode-project build-ipa \
+            --project "CodemagicCICD.xcodeproj" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
