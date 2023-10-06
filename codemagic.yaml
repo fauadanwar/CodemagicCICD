@@ -13,8 +13,8 @@ workflows:
       - name: Build application
         script: |
           xcodebuild build \
-          --project "$XCODE_PROJECT" \
-          --scheme "$XCODE_SCHEME" \
+          -project "$XCODE_PROJECT" \
+          -scheme "$XCODE_SCHEME" \
           -CODE_SIGN_IDENTITY="" \
           -CODE_SIGNING_REQUIRED=NO \
           -CODE_SIGNING_ALLOWED=NO
@@ -22,7 +22,7 @@ workflows:
         script: |
           xcode-project run-tests \
             --project "$XCODE_PROJECT" \
-            --scheme CodemagicCICD \
+            --scheme CodemagicCICD
         test_report: build/ios/test/*.xml
     artifacts:
       - build/ios/ipa/*.ipa
