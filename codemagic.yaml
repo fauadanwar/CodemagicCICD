@@ -1,6 +1,6 @@
 workflows:
   CodemagicCICDiOS-workflow:
-    name: Codemagic CI CD
+    name: CodemagicCICD
     max_build_duration: 120
     instance_type: mac_mini_m1
     integrations:
@@ -18,9 +18,9 @@ workflows:
             --workspace CodemagicCICD.xcodeproj \
             --scheme CodemagicCICD \
             --device "iPhone 14"
-     test_report: build/ios/test/*.xml
-     - name: Build ipa for distribution
-       script: |
+        test_report: build/ios/test/*.xml
+      - name: Build ipa for distribution
+        script: |
           xcode-project build-ipa \
             --project "CodemagicCICD.xcodeproj" \
             --scheme "$XCODE_SCHEME"

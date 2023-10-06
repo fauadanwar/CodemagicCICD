@@ -15,6 +15,7 @@
 		183E00262AC7F89100DDC226 /* CodemagicCICDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E00252AC7F89100DDC226 /* CodemagicCICDUITests.swift */; };
 		183E00282AC7F89100DDC226 /* CodemagicCICDUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E00272AC7F89100DDC226 /* CodemagicCICDUITestsLaunchTests.swift */; };
 		18506CE12ACE9F9B0090E1A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18506CE02ACE9F9B0090E1A8 /* GoogleService-Info.plist */; };
+		18A0340B2AD024880001AA46 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 18A0340A2AD024880001AA46 /* codemagic.yaml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		183E00252AC7F89100DDC226 /* CodemagicCICDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodemagicCICDUITests.swift; sourceTree = "<group>"; };
 		183E00272AC7F89100DDC226 /* CodemagicCICDUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodemagicCICDUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		18506CE02ACE9F9B0090E1A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18A0340A2AD024880001AA46 /* codemagic.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = codemagic.yaml; path = ../codemagic.yaml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				183E00082AC7F89000DDC226 /* CodemagicCICD */,
+				18A0340A2AD024880001AA46 /* codemagic.yaml */,
 				183E001A2AC7F89100DDC226 /* CodemagicCICDTests */,
 				183E00242AC7F89100DDC226 /* CodemagicCICDUITests */,
 				183E00072AC7F89000DDC226 /* Products */,
@@ -243,6 +246,7 @@
 				183E00122AC7F89100DDC226 /* Preview Assets.xcassets in Resources */,
 				183E000E2AC7F89100DDC226 /* Assets.xcassets in Resources */,
 				18506CE12ACE9F9B0090E1A8 /* GoogleService-Info.plist in Resources */,
+				18A0340B2AD024880001AA46 /* codemagic.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
