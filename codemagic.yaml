@@ -13,14 +13,14 @@ workflows:
       - name: iOS test
         script: |
           xcode-project run-tests \
-            --workspace $XCODE_PROJECT \
+            --workspace "$CM_BUILD_DIR/$XCODE_PROJECT" \
             --scheme CodemagicCICD \
             --device "iPhone 14"
         test_report: build/ios/test/*.xml
       - name: Build ipa for distribution
         script: |
           xcode-project build-ipa \
-            --project "$XCODE_PROJECT \
+            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
             --scheme "$XCODE_SCHEME"
     artifacts:
       - build/ios/ipa/*.ipa
