@@ -13,7 +13,6 @@ workflows:
       - name: Build application
         script: |
           xcodebuild build \
-          --clean \
           --project "$XCODE_PROJECT" \
           --scheme "$XCODE_SCHEME" \
           -CODE_SIGN_IDENTITY="" \
@@ -24,7 +23,6 @@ workflows:
           xcode-project run-tests \
             --project "$XCODE_PROJECT" \
             --scheme CodemagicCICD \
-            --device "iPhone 14"
         test_report: build/ios/test/*.xml
     artifacts:
       - build/ios/ipa/*.ipa
