@@ -10,6 +10,15 @@ workflows:
         XCODE_SCHEME: "CodemagicCICD"
       xcode: latest
     scripts:
+      - name: Build application
+        script: |
+          xcodebuild build \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME" \
+            --CODE_SIGN_IDENTITY="" \
+            --CODE_SIGNING_REQUIRED=NO \
+            --CODE_SIGNING_ALLOWED=NO
+
       - name: iOS test
         script: |
           xcode-project run-tests \
@@ -17,11 +26,7 @@ workflows:
             --scheme CodemagicCICD \
             --device "iPhone 14"
         test_report: build/ios/test/*.xml
-      - name: Build ipa for distribution
-        script: |
-          xcode-project build-ipa \
-            --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
